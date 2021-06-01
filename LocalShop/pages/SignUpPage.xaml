@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LocalShop.pages.SignUpPage">
+    <ContentPage.Content>
+        <StackLayout Margin="10" VerticalOptions="CenterAndExpand">
+            <Entry x:Name="ebtryUserName" Placeholder="Enter Your UserNmae" />
+            <Entry x:Name="ebtryEmail" Placeholder="Enter Your Email" />
+            <Entry x:Name="ebtryPassword" Placeholder="Enter Your Password" />
+            <Entry x:Name="ebtryConfimPassword" Placeholder="Enter Your ConfirmPassword" />
+            <Entry x:Name="ebtryPhonenumber" Placeholder="Enter Your PhNumber " />
+            <Entry x:Name="ebtryage" Placeholder="Enter Your Age" />
+            <Button Text="Save" Clicked="SaveSignUpInformation"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

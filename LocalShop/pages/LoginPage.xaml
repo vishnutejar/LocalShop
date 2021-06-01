@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LocalShop.pages.LoginPage"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <Grid VerticalOptions="CenterAndExpand" Margin="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <Entry x:Name="entryemail" Grid.Row="0" Placeholder="Enter your Email" Keyboard="Email"/>
+            <Entry x:Name="entrypassword" Grid.Row="1" Placeholder="Enter your Password"  IsPassword="True"/>
+            <Button Grid.Row="2" Text="Login" Clicked="ValidateUser"/>
+            <StackLayout Grid.Row="3" Orientation="Horizontal" HorizontalOptions="Fill" Margin="20">
+                <Label Text="ForgotPassword" HorizontalOptions="Start">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="GoToForgotPage"></TapGestureRecognizer>
+                    </Label.GestureRecognizers>
+                </Label>
+                <Label Text="SignUp" HorizontalOptions="EndAndExpand">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="GoToSignUp"></TapGestureRecognizer>
+                    </Label.GestureRecognizers>
+                </Label>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
