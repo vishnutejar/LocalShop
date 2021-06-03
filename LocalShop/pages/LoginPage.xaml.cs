@@ -32,9 +32,10 @@ namespace LocalShop.pages
                 DisplayAlert("Validation Error", "Enter Your password", "ok");
 
             }
-            else { 
-            
+            else {
+
                 //User authenticated
+                App.Current.MainPage=new NavigationPage( new HomePage());
 
             }
 

@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LocalShop.pages.ListOfProducts">
+    <ContentPage.Content>
+        <StackLayout>
+            <CollectionView x:Name="listOfProductsInHorizantal" ItemsLayout="HorizontalList" Margin="10">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Orientation="Vertical" Margin="20" Padding="10">
+                            <Frame HeightRequest="150" WidthRequest="70" BackgroundColor="Transparent" Padding="2" BorderColor="Gray">
+                                <Image Source="icon" WidthRequest="70"
+                                        HeightRequest="150"/>
+                            </Frame>
+                            <Label WidthRequest="20" Text="{Binding HeaderName}" TextColor="LightGray"  HorizontalTextAlignment="Center"/>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
