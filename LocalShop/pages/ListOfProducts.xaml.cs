@@ -31,6 +31,32 @@ namespace LocalShop.pages
             headerDatas.Add(new HeaderData {  HeaderName="Care Corner"});
             headerDatas.Add(new HeaderData {  HeaderName="Hearth Hub"});
             listOfProductsInHorizantal.ItemsSource = headerDatas;
+            carouselviewlistdata.ItemsSource = headerDatas;
+            listOfProductsinvertical.ItemsSource = headerDatas;
+            listOfProductsinverticalgrid.ItemsSource = headerDatas;
+            listOfProductsinhorizatalgrid.ItemsSource = headerDatas;
+            carouselviewlistdata.BackgroundColor = Color.LightBlue;
+        }
+
+        private void OnCollectionViewSelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            string previous = (e.PreviousSelection.FirstOrDefault() as HeaderData)?.HeaderName;
+            var current = e.CurrentSelection;
+
+          //  DisplayAlert("",current,"ok");
+        }
+        double totalHeight = 0;
+
+        private void ViewCell_SizeChanged(object sender, EventArgs e)
+        {
+            if (sender is Grid)
+            {
+                Grid grid = (Grid)sender;
+
+                totalHeight += grid.Height;
+                totalHeight += grid.Margin.Top;
+                totalHeight += grid.Margin.Bottom;
+            }
         }
     }
 }

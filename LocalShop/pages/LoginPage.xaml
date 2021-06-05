@@ -2,7 +2,22 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="LocalShop.pages.LoginPage"
+             BackgroundColor="LightPink"
              NavigationPage.HasNavigationBar="False">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Entry">
+                <Setter Property="TextColor">LightSalmon</Setter>
+                <Setter Property="PlaceholderColor">Yellow</Setter>
+                <Setter Property="Margin">10</Setter>
+                <Setter Property="BackgroundColor">white</Setter>
+            </Style>
+            <Style TargetType="Label" x:Key="yellowlable">
+                <Setter Property="TextColor">Red</Setter>
+                <Setter Property="FontSize">Medium</Setter>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <ContentPage.Content>
         <Grid VerticalOptions="CenterAndExpand" Margin="10">
             <Grid.RowDefinitions>
@@ -11,16 +26,16 @@
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>
             </Grid.RowDefinitions>
-            <Entry x:Name="entryemail" Grid.Row="0" Placeholder="Enter your Email" Keyboard="Email"/>
-            <Entry x:Name="entrypassword" Grid.Row="1" Placeholder="Enter your Password"  IsPassword="True"/>
-            <Button Grid.Row="2" Text="Login" Clicked="ValidateUser"/>
+            <Entry x:Name="entryemail" Grid.Row="0" Placeholder="Enter your Email" Keyboard="Email" />
+            <Entry x:Name="entrypassword"  Grid.Row="1" Placeholder="Enter your Password"  IsPassword="True"/>
+            <Button Grid.Row="2" Text="Login" Clicked="ValidateUser" BackgroundColor="Yellow" TextColor="Black" FontSize="Body"/>
             <StackLayout Grid.Row="3" Orientation="Horizontal" HorizontalOptions="Fill" Margin="20">
-                <Label Text="ForgotPassword" HorizontalOptions="Start">
+                <Label Text="ForgotPassword" HorizontalOptions="Start" Style="{StaticResource yellowlable}">
                     <Label.GestureRecognizers>
                         <TapGestureRecognizer Tapped="GoToForgotPage"></TapGestureRecognizer>
                     </Label.GestureRecognizers>
                 </Label>
-                <Label Text="SignUp" HorizontalOptions="EndAndExpand">
+                <Label Text="SignUp" HorizontalOptions="EndAndExpand" FontSize="Medium" TextColor="White">
                     <Label.GestureRecognizers>
                         <TapGestureRecognizer Tapped="GoToSignUp"></TapGestureRecognizer>
                     </Label.GestureRecognizers>
